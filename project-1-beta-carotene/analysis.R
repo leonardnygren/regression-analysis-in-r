@@ -1,13 +1,3 @@
-install.packages(c(
-  "readxl",
-  "tidyverse",
-  "car",
-  "rstatix",
-  "GGally",
-  "patchwork",
-  "plyr"
-))
-
 library(readxl)
 library(tidyverse); theme_set(theme_bw() + theme(text = element_text(size = 18)))
 library(car)
@@ -503,8 +493,10 @@ ggplot(car_pred, aes(y = log(betaplasma), x = calories)) +
   scale_color_manual(values = highlightcolors)  +
   labs(title = "Log-betaplasma vs calories.")
 
-# High leverage is the impact of obs on its estimated value. Therefore, we can conclude that the
-# outlier has large influence in the model. 
+# The observation with extreme alcohol consumption has very high leverage,
+# indicating an unusual combination of predictor values.
+# However, high leverage does not necessarily imply high influence.
+# We investigate influence using Cook's distance and DFBETAS below.
 
 
 #3(g)
