@@ -1,0 +1,9 @@
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+Rplots.pdf
+.DS_Store
+Thumbs.db
+~$*.xlsx
+*.Rout
